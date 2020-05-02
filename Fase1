@@ -1,53 +1,60 @@
 import pandas as pd
-import random 
-SEPARADOR = ("*" * 20) + "\n"
+import sys
 
-diccionario_alumnos={"Angel":[random.randrange(60,101) for x in range(5)],\
-                     "Pedro":[random.randrange(60,101) for x in range(5)],\
-                     "Miguel":[random.randrange(60,101) for x in range(5)],\
-                     "Mario":[random.randrange(60,101) for x in range(5)],\
-                     "Julio":[random.randrange(60,101) for x in range(5)],\
-                     "Imanol":[random.randrange(60,101) for x in range(5)],\
-                     "Fernanda":[random.randrange(60,101) for x in range(5)],\
-                     "Lizeth":[random.randrange(60,101) for x in range(5)],\
-                     "Diana":[random.randrange(60,101) for x in range(5)],\
-                     "Diego":[random.randrange(60,101) for x in range(5)],\
-                     "Fernando":[random.randrange(60,101) for x in range(5)],\
-                     "Oscar":[random.randrange(60,101) for x in range(5)],\
-                     "Daniela":[random.randrange(60,101) for x in range(5)],\
-                     "Karen":[random.randrange(60,101) for x in range(5)],\
-                     "Franco":[random.randrange(60,101) for x in range(5)],\
-                     "Isabel":[random.randrange(60,101) for x in range(5)],\
-                     "Arick":[random.randrange(60,101) for x in range(5)],\
-                     "Edson":[random.randrange(60,101) for x in range(5)],\
-                     "Manuel":[random.randrange(60,101) for x in range(5)],\
-                     "Arely":[random.randrange(60,101) for x in range(5)],\
-                     "Gaby":[random.randrange(60,101) for x in range(5)],\
-                     "Lalo":[random.randrange(60,101) for x in range(5)],\
-                     "Saul":[random.randrange(60,101) for x in range(5)],\
-                     "Karl":[random.randrange(60,101) for x in range(5)],\
-                     "Carlos":[random.randrange(60,101) for x in range(5)],\
-                     "Melisa":[random.randrange(60,101) for x in range(5)],\
-                     "Susana":[random.randrange(60,101) for x in range(5)],\
-                     "Andrea":[random.randrange(60,101) for x in range(5)],\
-                     "Rebeca":[random.randrange(60,101) for x in range(5)],}
+Alumnos = {"Angel":[], "Pedro" :[], "Miguel" :[], "Mario" :[], "Julio" :[], \
+                    "Imanol" :[], "Fernanda" :[], "Lizeth" :[], "Diana" :[], "Diego" :[], \
+                    "Fernando" :[], "Oscar" :[], "Daniela" :[], "Karen" :[], "Franco" :[], \
+                    "Isabel" :[], "Arick" :[], "Edson" :[], "Manuel" :[], "Arely" :[], "Gaby" :[], \
+                    "Lalo" :[], "Saul" :[], "Karl" :[], "Carlos" :[], "Melisa" :[], \
+                    "Susana" :[], "Andrea" :[], "Rebeca" :[]}
 
+materias= ["Estadistica","Creatividad","Liderazgo","Estructura de datos",\
+                 "Programacion de base de datos"]
 
-diccionario_materia =pd.DataFrame(diccionario_alumnos)
-diccionario_materia.index =["Estadistica","Creatividad","Liderazgo",\
-                            "Base de Datos","Contabilidad"]
-          
-print ("Todas las asignaturas")
-SubConjunto = diccionario_materia.loc["Estadistica":"Contabilidad"].T
-print(SubConjunto)
-print (SEPARADOR)
+op = 0
+while op != 4:
 
-#Estadistica Descriptiva
-print (diccionario_materia.describe().T)
-print(SEPARADOR)
+    print("1.- Registrar Calificaciones")
+    print("2.- Mostrar Calificaciones")
+    print("3.- Mostrar alumnos reprobados")
+    print("4.- Mostrar Estadistica descriptiva")
+    print("5.- Salir")
+    opcion = int(input("Elige una opción: "))
 
-#Reprobados
-print("materias reprobadas")
-reprobados = diccionario_materia[diccionario_materia < 70].T
-print(reprobados)
-print (SEPARADOR)
+    if opcion == 1:
+        for e in Alumnos:
+            print("Nombre Alumno:",e)
+            for i in materias:
+                resultado1 = 0
+                resultado1 = int(input("Cual es la calificacion?"))
+                Alumnos[e].append(resultado1)
+    elif opcion == 2:
+        opcin2 = pd.DataFrame(Alumnos)
+        opcin2.index = [materias]
+        print(opcin2.T)
+        
+    elif opcion == 3:
+        opcin2 = pd.DataFrame(Alumnos)
+        opcin2.index = [materias]
+        var1 = Alumnos.keys()
+        for a in var1:
+            variable_control = Alumnos.get(a,())
+            print(" ")
+            print("Alumno:",a)
+            print("Reprobados")
+            for e in variable_control:
+                if e < 60:
+                    print(e)
+        
+    elif opcion == 4:
+        opcin2 = pd.DataFrame(Alumnos)
+        opcin2.index= [materias]
+        print("La media Estandart es")
+        print(opcin2.T.std())
+        print("El promedio es:")
+        print(opcin2.T.mean)
+        
+    elif opcion == 5:
+        exit()
+
+    else:("Opcion no valida")
