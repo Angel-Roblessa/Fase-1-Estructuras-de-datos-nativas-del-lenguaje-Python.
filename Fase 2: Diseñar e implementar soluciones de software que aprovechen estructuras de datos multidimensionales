@@ -2,7 +2,12 @@ import pandas as pd
 import sys
 import json as js
 
-Alumnos = {"Angel":[], "Pedro" :[], "Miguel" :[]}
+Alumnos = {"Angel":[], "Pedro" :[], "Miguel" :[], "Mario" :[], "Julio" :[], \
+                    "Imanol" :[], "Fernanda" :[], "Lizeth" :[], "Diana" :[], "Diego" :[], \
+                    "Fernando" :[], "Oscar" :[], "Daniela" :[], "Karen" :[], "Franco" :[], \
+                    "Isabel" :[], "Arick" :[], "Edson" :[], "Manuel" :[], "Arely" :[], "Gaby" :[], \
+                    "Lalo" :[], "Saul" :[], "Karl" :[], "Carlos" :[], "Melisa" :[], \
+                    "Susana" :[], "Andrea" :[], "Rebeca" :[]}
 
 materias= ["Estadistica","Creatividad","Liderazgo","Estructura de datos",\
                  "Programacion de base de datos"]
