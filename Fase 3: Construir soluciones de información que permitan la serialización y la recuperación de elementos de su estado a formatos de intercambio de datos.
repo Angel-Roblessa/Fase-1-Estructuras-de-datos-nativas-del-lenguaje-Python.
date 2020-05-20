@@ -1,33 +1,4 @@
-[10:50 p. m., 14/5/2020] Pardo: import pandas as pd
-import sys
-import json as js
-import sqlite3
-from sqlite3 import Error
-
-
-Alumnos = {"Angel":[], "Pedro" :[], "Miguel" :[], "Mario" :[], "Julio" :[], \
-                    "Imanol" :[], "Fernanda" :[], "Lizeth" :[], "Diana" :[], "Diego" :[], \
-                    "Fernando" :[], "Oscar" :[], "Daniela" :[], "Karen" :[], "Franco" :[], \
-                    "Isabel" :[], "Arick" :[], "Edson" :[], "Manuel" :[], "Arely" :[], "Gaby" :[], \
-                    "Lalo" :[], "Saul" :[], "Karl" :[], "Carlos" :[], "Melisa" :[], \
-                    "Susana" :[], "Andrea" :[], "Rebeca" :[]}
-
-
-materias= ["Estadistica","Creatividad","Liderazgo","Estructura de datos",\
-                 "Programacion de base de datos"]
-
-op = 0
-while op != 4:
-
-    print("1.…
-[10:51 p. m., 14/5/2020] Pardo: me escuchas
-[10:51 p. m., 14/5/2020] Pardo: no ese no
-[10:51 p. m., 14/5/2020] Pardo: me escuchas?
-[10:51 p. m., 14/5/2020] Angel Robles: cual va a ser entonces?
-[10:52 p. m., 14/5/2020] Angel Robles: ????
-[10:52 p. m., 14/5/2020] Pardo: no em esucchas?
-[10:52 p. m., 14/5/2020] Pardo: que raro
-[10:53 p. m., 14/5/2020] Pardo: import pandas as pd
+import pandas as pd
 import sys
 import json as js
 import sqlite3
@@ -136,7 +107,7 @@ while op != 4:
              print(e)
         except:
              print(f"Se produjo el siguiente error: {sys.exc_info()[0]}")
-     elif opcion == 7:
+    elif opcion == 7:
          exit()
 
     else:("Opcion no valida")
